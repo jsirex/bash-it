@@ -11,21 +11,4 @@ if [ "$rvm_path" ]
 then
     # Load the auto-completion script if RVM was loaded.
     [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-
-    switch () {
-      rvm $1
-      local v=$(rvm_version)
-      rvm wrapper $1 textmate
-      echo "Switch to Ruby version: "$v
-    }
-
-    rvm_default () {
-      rvm --default $1
-      rvm wrapper $1 textmate
-    }
-
-    function rvm_version () {
-      ruby --version
-    }
-
 fi
