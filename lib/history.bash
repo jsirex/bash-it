@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-# Bash History Handling
+# append to bash_history if Terminal.app quits
+shopt -s histappend
 
-shopt -s histappend              # append to bash_history if Terminal.app quits
-export HISTCONTROL=erasedups     # erase duplicates; alternative option: export HISTCONTROL=ignoredups
-export HISTSIZE=5000             # resize history size
+# history handling
+#
+# Erase duplicates
+# Bash History
+export HISTCONTROL="ignoredups"
+export HISTCONTROL=erasedups
+
+# resize history size
+export HISTSIZE=500000
+export HISTFILESIZE=1000000
+
 export AUTOFEATURE=true autotest
 
 function rh {
