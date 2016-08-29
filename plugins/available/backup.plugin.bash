@@ -6,8 +6,19 @@ function backup-my-pc() {
     BACKUP_FILE_NAME="`hostname -s`-backup-`date +%F`.tar.bz2"
     FULL_BACKUP_FILE_NAME=$TARGET_DIR/$BACKUP_FILE_NAME
 
-    EXCLUDE_DIRECTORIES="/dev /lost+found /media /mnt /proc /run /sys /tmp /home/sirex/.steam/steam/steamapps /usr/local/games/itg \
-/home/sirex/.m2 /home/sirex/.berkshelf /home/sirex/.cache"
+    EXCLUDE_DIRECTORIES="/dev /lost+found /media /mnt /proc /run /sys /tmp \
+/home/sirex/.steam \
+/home/sirex/.m2 \
+/home/sirex/.berkshelf \
+/home/sirex/.cache \
+/home/sirex/.vagrant.d/boxes \
+/home/sirex/.torrents \
+/home/sirex/proj \
+/home/sirex/.local/share/Trash \
+/home/sirex/.thumbnails \
+/home/sirex/VirtualBox\ VMs/ \
+/usr/local/games/itg /var/cache \
+/var/lib/docker"
 
     if [ -z "$TARGET_DIR" ]; then
         echo "Specify target backup directory"
